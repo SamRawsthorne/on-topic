@@ -8,5 +8,5 @@ setup(
         'gensim==3.8.3',
         'pyLDAvis==3.4.1'
      ],
-    python_requires='>=3.9',  # Specify Python version compatibility if necessary
+    python_requires='>=3.8',  # Specify Python version compatibility if necessary
 )
