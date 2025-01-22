@@ -4,6 +4,8 @@ import pickle
 from openai import OpenAI
 import os
 import getpass
+from lda_eval_lib.gensim_ldamallet import LdaMallet
+import lda_eval_lib
 
 def OpenAI_client():
     if 'OPENAI_API_KEY' not in os.environ:
@@ -90,7 +92,7 @@ def load_lda_run(savefolder,model_name):
     if model_type == 'gensim':
         lda_model = gensim.models.ldamodel.LdaModel.load(f"{savefolder}/{model_name}_lda_model")
     else:
-        lda_model = gensim.models.wrappers.LdaMallet.load(f"{savefolder}/{model_name}_lda_model")
+        lda_model = lda_eval_lib.gensim_ldamallet.LdaMallet.load(f"{savefolder}/{model_name}_lda_model")
     
     # Load other components
     with open(f"{savefolder}/{model_name}_textbeforetokenization.pkl", "rb") as f:
