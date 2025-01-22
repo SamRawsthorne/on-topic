@@ -1,4 +1,4 @@
-from gensim.models.wrappers.ldamallet import LdaMallet
+from lda_eval_lib.gensim_ldamallet import LdaMallet
 import os
 
 class CustomLdaMallet(LdaMallet):
