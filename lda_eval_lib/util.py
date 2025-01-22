@@ -89,6 +89,7 @@ def load_lda_run(savefolder,model_name):
         id2word: Gensim dictionary object.
     """
     # Load the LDA model
+    savepath = os.path.join(savefolder,model_name)
     model_type = model_name.split('_')[0]
     if model_type == 'gensim':
         lda_model = gensim.models.ldamodel.LdaModel.load(savepath+"_lda_model")
