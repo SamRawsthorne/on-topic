@@ -1,2 +1,0 @@
-gensim==3.8.3
-pyLDAvis==3.4.1
