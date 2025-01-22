@@ -64,16 +64,17 @@ def save_lda_run(savefolder, model_name, lda_model, textbeforetokenization, toke
         id2word (Dictionary): Gensim dictionary object.
     """
     # Save the LDA model
-    lda_model.save(f"{savefolder}/{model_name}_lda_model")
+    savepath = os.path.join(savefolder,model_name)
+    lda_model.save(savepath+"_lda_model")
     
     # Save other components
-    with open(f"{savefolder}/{model_name}_textbeforetokenization.pkl", "wb") as f:
+    with open(savepath + "_textbeforetokenization.pkl", "wb") as f:
         pickle.dump(textbeforetokenization, f)
-    with open(f"{savefolder}/{model_name}_tokenized_text.pkl", "wb") as f:
+    with open(savepath+"_tokenized_text.pkl", "wb") as f:
         pickle.dump(tokenized_text, f)
-    with open(f"{savefolder}/{model_name}_corpus.pkl", "wb") as f:
+    with open(savepath+"_corpus.pkl", "wb") as f:
         pickle.dump(corpus, f)
-    id2word.save(f"{savefolder}/{model_name}_id2word")
+    id2word.save(savepath+"_id2word")
 
 def load_lda_run(savefolder,model_name):
     """
@@ -90,18 +91,18 @@ def load_lda_run(savefolder,model_name):
     # Load the LDA model
     model_type = model_name.split('_')[0]
     if model_type == 'gensim':
-        lda_model = gensim.models.ldamodel.LdaModel.load(f"{savefolder}/{model_name}_lda_model")
+        lda_model = gensim.models.ldamodel.LdaModel.load(savepath+"_lda_model")
     else:
-        lda_model = lda_eval_lib.gensim_ldamallet.LdaMallet.load(f"{savefolder}/{model_name}_lda_model")
+        lda_model = lda_eval_lib.gensim_ldamallet.LdaMallet.load(savepath+"_lda_model")
     
     # Load other components
-    with open(f"{savefolder}/{model_name}_textbeforetokenization.pkl", "rb") as f:
+    with open(savepath+"_textbeforetokenization.pkl", "rb") as f:
         textbeforetokenization = pickle.load(f)
-    with open(f"{savefolder}/{model_name}_tokenized_text.pkl", "rb") as f:
+    with open(savepath+"_tokenized_text.pkl", "rb") as f:
         tokenized_text = pickle.load(f)
-    with open(f"{savefolder}/{model_name}_corpus.pkl", "rb") as f:
+    with open(savepath+"_corpus.pkl", "rb") as f:
         corpus = pickle.load(f)
-    id2word = corpora.Dictionary.load(f"{savefolder}/{model_name}_id2word")
+    id2word = corpora.Dictionary.load(savepath + "_id2word")
     
     return lda_model, textbeforetokenization, tokenized_text, corpus, id2word
 
