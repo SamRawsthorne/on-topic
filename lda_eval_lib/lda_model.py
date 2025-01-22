@@ -29,7 +29,7 @@ def lda_run(tokenized_text, minpc, maxpc, alpha, beta, ntopics, mallet_path, sav
                            )
 
     save_lda_run(savefolder, model_name, lda_model, textbeforetokenization, tokenized_text, corpus, id2word)
-    print(f'model saved: {savefolder}/{model_name}')
+    print(f'model saved: {os.path.join(savefolder,model_name)}')
 
     #### MALLET ####
     model_name_mallet = "mallet_"+str(minpc)+"_"+str(maxpc)+"_"+str(ntopics)+"_"+str(alpha)+"_"+str(beta) 
@@ -48,4 +48,4 @@ def lda_run(tokenized_text, minpc, maxpc, alpha, beta, ntopics, mallet_path, sav
     )
     
     save_lda_run(savefolder, model_name_mallet, mallet_model, textbeforetokenization, tokenized_text, corpus, id2word)
-    print(f'model saved: {savefolder}/{model_name_mallet}')
+    print(f'model saved: {os.path.join(savefolder,model_name_mallet)}')
