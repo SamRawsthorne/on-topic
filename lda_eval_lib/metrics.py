@@ -3,7 +3,7 @@ import numpy as np
 import os
 import gensim 
 from lda_eval_lib.util import create_corpus, save_lda_run, load_lda_run
-import gensim.models.wrappers.ldamallet as mallet
+import lda_eval_lib.gensim_ldamallet as mallet
 from gensim.models import CoherenceModel
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
