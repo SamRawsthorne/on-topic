@@ -13,6 +13,6 @@ setup(
     python_requires='>=3.9, <3.10',  # Specify Python version compatibility if necessary
     include_package_data=True,
     package_data={
-        "": ["test/*.pkl"],  # Include all .pkl files in the 'test' folder
+        "": ["test/*.pkl"]  # Include all .pkl files in the 'test' folder
     }
 )
