@@ -7,7 +7,7 @@ setup(
     install_requires=[
         'openai==1.59.8',
         'gensim==3.8.3',
-        'pyLDAvis==3.4.0',
+        'pyLDAvis==3.3.1',
         'scikit-learn==1.5.1',
         'scipy==1.10.1'
      ],
