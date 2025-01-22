@@ -5,7 +5,6 @@ setup(
     version='0.1.1',
     packages=find_packages(),
     install_requires=[
-        'gensim==3.8.3',
         'openai==1.59.8',
         'pyLDAvis==3.4.1',
         'scikit-learn==1.5.1',
