@@ -6,7 +6,14 @@ setup(
     packages=find_packages(),
     install_requires=[
         'gensim==3.8.3',
-        'pyLDAvis==3.4.1'
+        'openai==1.59.8',
+        'pyLDAvis==3.4.1',
+        'scikit-learn==1.5.1',
+        'scipy==1.10.1'
      ],
-    python_requires='>=3.9',  # Specify Python version compatibility if necessary
+    python_requires='==3.9',  # Specify Python version compatibility if necessary
+    include_package_data=True,
+    package_data={
+        "": ["test/*.pkl"],  # Include all .pkl files in the 'test' folder
+    }
 )
