@@ -38,7 +38,7 @@ beta = "auto"
 ntopics = 30
 
 # folder to save model and data files
-savefolder = '/Users/gitaepark/Downloads'
+savefolder = '/Users/Downloads'
 
 # path to mallet bin
 mallet_path = '/Users/mallet-2.0.8/bin/mallet'
@@ -50,15 +50,15 @@ lda_eval_lib.lda_model.lda_run(tokenized_text, minpc, maxpc, alpha, beta, ntopic
 ```
 
      - modelling  gensim_0.05_0.5_30_auto_auto
-    model saved: /Users/gitaepark/Downloads/gensim_0.05_0.5_30_auto_auto
+    model saved: /Users/Downloads/gensim_0.05_0.5_30_auto_auto
      - modelling  mallet_0.05_0.5_30_auto_auto
-    model saved: /Users/gitaepark/Downloads/mallet_0.05_0.5_30_auto_auto
+    model saved: /Users/Downloads/mallet_0.05_0.5_30_auto_auto
 
 
 
 ```python
 # Load a trained model 
-model_path = "/Users/gitaepark/Downloads/mallet_0.05_0.5_30_0.05_0.01"
+model_path = "/Users/Downloads/mallet_0.05_0.5_30_0.05_0.01"
 lda_model, textbeforetokenization, tokenized_text, corpus, id2word = lda_eval_lib.util.load_lda_run(model_path)
 
 # lda_model is other gensim.lda object or gensim.mallet object
@@ -135,7 +135,7 @@ lda_model.show_topics(num_topics=-1)
 
 
 ```python
-model_path = "/Users/gitaepark/Downloads/mallet_0.05_0.5_30_0.05_0.01"
+model_path = "/Users/Downloads/mallet_0.05_0.5_30_0.05_0.01"
 
 print(f"LDA model loaded from: {model_path}")
 
@@ -155,7 +155,7 @@ e=lda_eval_lib.metrics.coherence(model_path)
 print(f"coherence score: {e}")
 ```
 
-    LDA model loaded from: /Users/gitaepark/Downloads/mallet_0.05_0.5_30_0.05_0.01
+    LDA model loaded from: /Users/Downloads/mallet_0.05_0.5_30_0.05_0.01
     proportion of valid topics: 1.0
     diversity score: 0.7733333333333333
     granularity score: 0.6966666666666667
@@ -183,7 +183,7 @@ chunk_size = 3
 
 # Define the model
 gpt_model = "gpt-4o"
-model_path = "/Users/gitaepark/Downloads/mallet_0.05_0.5_30_0.05_0.01"
+model_path = "/Users/Downloads/mallet_0.05_0.5_30_0.05_0.01"
 
 WIT = lda_eval_lib.gpt_wit.word_intrusion_task(model_path, client, top_n, bottom_n, common_n, chunk_size=10,
                            gpt_model="gpt-4o", temperature=0)
@@ -597,7 +597,7 @@ WIT.iloc[0]['task']
 
 ```python
 gpt_model = "gpt-4o"
-model_path = "/Users/gitaepark/Downloads/mallet_0.05_0.5_30_0.05_0.01"
+model_path = "/Users/Downloads/mallet_0.05_0.5_30_0.05_0.01"
 lda_eval_lib.gpt_labelling.labelling(model_path, client, gpt_model)
 ```
 
@@ -856,7 +856,7 @@ lda_eval_lib.gpt_labelling.labelling(model_path, client, gpt_model)
 ```python
 import pyLDAvis
 
-model_path = "/Users/gitaepark/Downloads/mallet_0.05_0.5_30_auto_auto"
+model_path = "/Users/Downloads/mallet_0.05_0.5_30_auto_auto"
 
 pyldavisdata = lda_eval_lib.custom_pyvis.visualize_topics(model_path)
 
