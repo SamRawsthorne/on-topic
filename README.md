@@ -1,4 +1,6 @@
-This is the online appendix accompanying "When Methods Matter: How Implementation Choices Shape Topic Discovery in Financial Text"
+This is the online appendix accompanying "When Methods Matter: How Implementation Choices Shape Topic Discovery in Financial Text".
+
+The paper is available at https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5134615
 
 # Requirements
 
